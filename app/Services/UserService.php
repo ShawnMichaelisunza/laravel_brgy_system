@@ -21,7 +21,6 @@ class UserService{
         return $user;
     }
 
-
     // view profile
     public function UserProfileService($id){
 
@@ -30,5 +29,50 @@ class UserService{
         $user = User::findOrFail($decrypt);
         return $user;
     }
+
+    // edit user
+    public function UserEditService($id){
+
+        $decrypt = decrypt($id);
+        $user = User::findOrFail($decrypt);
+
+        return $user;
+    }
+    public function UserUpdateService($id, $data){
+
+        $decrypt = decrypt($id);
+        $user = User::findOrFail($decrypt);
+        $user->update($data);
+
+        return $user;
+    }
+
+    // view deleted account
+    public function UserDeletedService(){
+
+        $users = User::onlyTrashed()->orderBy('created_at', 'DESC');
+
+        return $users->paginate(5);
+
+    }
+
+    // delete user
+    public function UserDestroyService($id){
+
+        $decrypt = decrypt($id);
+        $user = User::findOrFail($decrypt);
+        return $user->delete();
+    }
+
+    public function UserRestoreService($id){
+
+        $decrypt = decrypt($id);
+        $user = User::withTrashed()->findOrFail($decrypt);
+        $user->restore();
+
+        return $user;
+    }
+
+
 
 }

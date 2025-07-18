@@ -24,7 +24,9 @@ class UserRequest extends FormRequest
         return [
             'name' => ['required'],
             'profile' => ['required', 'mimes:png,jpg'],
+            'address' => ['required'],
             'email' => ['required', 'email', 'unique:users'],
+            'address' => ['required'],
             'password' => ['required', 'confirmed']
         ];
     }

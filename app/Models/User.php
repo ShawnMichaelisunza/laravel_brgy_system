@@ -22,9 +22,15 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'profile',
+        'address',
         'email',
         'password',
     ];
+
+    public function clearances(){
+
+        return $this->hasMany(Clearance::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

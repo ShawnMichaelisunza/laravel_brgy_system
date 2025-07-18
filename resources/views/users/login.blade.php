@@ -2,10 +2,10 @@
 @include('alert.success')
 
 @section('content')
-    <div class="flex justify-center">
-        <div class="w-full mt-25">
+    <div id="p-login" class="flex justify-center">
+        <div id="c-login" class="w-full mt-25">
             <div class="max-w-lg mx-auto bg-white dark:bg-gray-800 rounded-lg px-8 py-10 flex flex-col items-center">
-                <h1 class="text-xl font-bold text-center text-red-800 dark:text-gray-200 mb-3">Welcome to Brgy KUPAL</h1>
+                <h1 class="text-xl font-bold text-center text-red-800 dark:text-gray-200 mb-3">Welcome to Barangay Kupal</h1>
                 <h1 class="text-3xl font-bold text-center text-red-800 dark:text-gray-200">Sign In</h1>
                 <form action="{{ route('user.store') }}" class="w-full flex flex-col gap-4" method="POST">
                     @csrf
@@ -43,7 +43,7 @@
             </div>
         </div>
         {{-- ------ --}}
-        <div class="w-full">
+        <div id="img-login" class="w-full">
             <img src="{{ asset('assets/image/login-register bg.jpg') }}" alt="">
         </div>
     </div>

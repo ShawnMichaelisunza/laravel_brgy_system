@@ -1,0 +1,23 @@
+@media only screen and (max-width: 600px) {
+#p-login{
+
+    flex-wrap: wrap;
+}
+
+#c-login{
+    width: 100%;
+}
+#img-login{
+    display: none;
+}
+
+/* council */
+#council{
+    flex-wrap: wrap;
+}
+
+#m-council{
+    width: 100%;
+}
+
+}
